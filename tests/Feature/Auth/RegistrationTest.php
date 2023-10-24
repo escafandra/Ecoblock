@@ -42,7 +42,7 @@ class RegistrationTest extends TestCase
 
         $newAdmin = User::where('email', 'test@example.com')->first();
 
-        $responseRedirectWhitAuth->assertRedirect(route(RouteServiceProvider::SUCCESS_ADMIN_ADDED,$newAdmin));
+        $responseRedirectWhitAuth->assertRedirect(route(RouteServiceProvider::SUCCESS_ADMIN_ADDED, $newAdmin));
 
         $responseViewWhitAuth = $this->actingAs($admin)->followingRedirects()->post('/register', [
             'name' => 'Test Admin 2',
@@ -62,7 +62,7 @@ class RegistrationTest extends TestCase
 
         $newAdmin = User::where('email', 'test@example.com')->first();
 
-        $responseRedirectWhitAuth->assertRedirect(route(RouteServiceProvider::SUCCESS_ADMIN_ADDED,$newAdmin));
+        $responseRedirectWhitAuth->assertRedirect(route(RouteServiceProvider::SUCCESS_ADMIN_ADDED, $newAdmin));
 
         $this->actingAs($admin)->post('/register', [
             'name' => 'Test Admin',
