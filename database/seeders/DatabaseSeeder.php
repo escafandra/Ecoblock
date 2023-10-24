@@ -12,9 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-         User::factory()->create([
-             'name' => env('SUPERADMIN_NAME', 'Superadmin'),
-             'email' => env('SUPERADMIN_MAIL', 'admin@ecoblock.com.co'),
-         ]);
+        User::factory()->create([
+            'name' => env('SUPERADMIN_NAME', 'Superadmin'),
+            'email' => env('SUPERADMIN_MAIL', 'admin@ecoblock.com.co'),
+        ]);
     }
 }
