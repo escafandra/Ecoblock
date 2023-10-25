@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory()->create([
-            'name' => env('SUPERADMIN_NAME', 'Superadmin'),
+            'name' => env('SUPERADMIN_NAME', 'superadmin'),
             'email' => env('SUPERADMIN_MAIL', 'admin@ecoblock.com.co'),
         ]);
     }

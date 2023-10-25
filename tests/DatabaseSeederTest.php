@@ -12,7 +12,7 @@ class DatabaseSeederTest extends TestCase
         $this->artisan('db:seed');
 
         $this->assertDatabaseHas('users', [
-            'name' => env('SUPERADMIN_NAME', 'Superadmin'),
+            'name' => env('SUPERADMIN_NAME', 'superadmin'),
             'email' => env('SUPERADMIN_MAIL', 'admin@ecoblock.com.co'),
         ]);
     }
