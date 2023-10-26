@@ -33,7 +33,7 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('admin/success/{user}', [RegisteredUserController::class, 'show'])->name(RouteServiceProvider::SUCCESS_ADMIN_ADDED);
+    Route::get('admin/success/{user}', [RegisteredUserController::class, 'show'])->name('success-new-admin');
 
     Route::get('register', [RegisteredUserController::class, 'create'])
         ->name('register');

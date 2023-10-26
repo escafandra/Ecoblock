@@ -39,7 +39,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return redirect()->route(RouteServiceProvider::SUCCESS_ADMIN_ADDED, ['user' => $user]);
+        return redirect()->route('success-new-admin', ['user' => $user]);
     }
 
     public function show(User $user): View
