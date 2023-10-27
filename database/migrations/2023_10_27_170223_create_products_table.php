@@ -8,10 +8,15 @@ return new class () extends Migration {
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+            $table->string('name', 50);
+            $table->text('description')->nullable(true);
+            $table->integer('price', 7)->nullable(true);
+            $table->json('advantages')->nullable(true);
+            $table->json('datasheet')->nullable(true);
             $table->timestamps();
         });
     }
