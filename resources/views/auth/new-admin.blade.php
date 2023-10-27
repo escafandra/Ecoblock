@@ -7,7 +7,6 @@
             <h1>Las credenciales del nuevo administrador son: </h1>
             <h3>Name: {{ $user->name }}</h3>
             <h3>Email: {{ $user->email }}</h3>
-            <h3>Password: password </h3>
         </div>
     </div>
 </x-guest-layout>

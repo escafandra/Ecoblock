@@ -11,62 +11,69 @@ class RegistrationTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_registration_screen_can_be_rendered_only_for_an_admin(): void
+    public function test_registration_screen_can_be_rendered_for_an_user(): void
     {
-        $admin = User::factory()->create();
+        $user = User::factory()->create();
 
-        $responseWithOutAuth = $this->get('/register');
+        $response = $this->actingAs($user)->get('/register');
 
-        $responseWithOutAuth->assertStatus(302);
+        $response->assertStatus(200);
+        $response->assertViewIs('auth.register');
+    }
+    public function test_registration_screen_can_not_be_rendered_for_an_gest(): void
+    {
+        $response = $this->get('/register');
 
-        $responseWhitAuth = $this->actingAs($admin)->get('/register');
-
-        $responseWhitAuth->assertStatus(200);
-        $responseWhitAuth->assertViewIs('auth.register');
+        $response->assertRedirect(route('login'));
     }
 
-    public function test_only_an_admin_can_register_new_admins(): void
+    public function test_an_user_can_register_new_users(): void
     {
-        $responseWhitOutAuth = $this->post('/register', [
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->post('/register', [
             'name' => 'Test Admin',
             'email' => 'test@example.com',
-        ]);
-        $responseWhitOutAuth->assertStatus(302);
-
-        $admin = User::factory()->create();
-
-        $responseRedirectWhitAuth = $this->actingAs($admin)->post('/register', [
-            'name' => 'Test Admin',
-            'email' => 'test@example.com',
+            'password' => 'password',
+            'password_confirmation' => 'password',
         ]);
 
-        $newAdmin = User::where('email', 'test@example.com')->first();
+        $newUser = User::where('email', 'test@example.com')->first();
 
-        $responseRedirectWhitAuth->assertRedirect(route('success-new-admin', $newAdmin));
-
-        $responseViewWhitAuth = $this->actingAs($admin)->followingRedirects()->post('/register', [
-            'name' => 'Test Admin 2',
-            'email' => 'test2@example.com',
-        ]);
-        $responseViewWhitAuth->assertViewIs('auth.new-admin');
-
+        $response->assertRedirect(route('success-new-admin', $newUser));
     }
+    public function test_a_new_user_view_can_show_info(): void
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->followingRedirects()->post('/register', [
+            'name' => 'Test Admin',
+            'email' => 'test@example.com',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+        ]);
+
+        $response->assertViewIs('auth.new-admin')
+            ->assertSee('Test Admin')
+            ->assertSee('test@example.com');
+    }
+
     public function test_message_error_email_has_already_been_taken(): void
     {
-        $admin = User::factory()->create();
+        $user = User::factory()->create();
 
-        $responseRedirectWhitAuth = $this->actingAs($admin)->post('/register', [
+        $response = $this->actingAs($user)->post('/register', [
             'name' => 'Test Admin',
             'email' => 'test@example.com',
+            'password' => 'password',
+            'password_confirmation' => 'password',
         ]);
 
-        $newAdmin = User::where('email', 'test@example.com')->first();
-
-        $responseRedirectWhitAuth->assertRedirect(route('success-new-admin', $newAdmin));
-
-        $this->actingAs($admin)->post('/register', [
+        $this->actingAs($user)->post('/register', [
             'name' => 'Test Admin',
             'email' => 'test@example.com',
+            'password' => 'password',
+            'password_confirmation' => 'password',
         ]);
         $errors = session('errors');
         $this->assertNotNull($errors);
