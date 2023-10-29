@@ -1,91 +1,36 @@
-<x-guest-layout>
+<x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ trans('navigation.products') }}
+            {{ __(trans('navigation.catalog')) }}
         </h2>
     </x-slot>
+    <main class="my-8">
+        <div class="container mx-auto px-6">
+            <form action="{{ route('product.index') }}" method="GET" class="grid grid-cols-7 gap-3">
+                <x-input id="search" type="text" name="search" class="col-span-6"/>
+                <x-button class="row-span-2">
+                    {{ __(trans('buttons.search')) }}
+                </x-button>
+            </form>
+            <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="m-4">
-                {{ $products->links() }}
-            </div>
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <section class="container mx-auto p-6 font-mono">
-                        <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
-                            <div class="w-full overflow-x-auto">
-                                <table class="w-full">
-                                    <thead>
-                                        <tr
-                                            class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-                                            <th class="px-4 py-3">{{ trans('products.name') }}</th>
-                                            <th class="px-4 py-3">{{ trans('products.description') }}</th>
-                                            <th class="px-4 py-3">{{ trans('products.price') }}</th>
-                                            <th class="px-4 py-3">{{ trans('buttons.show') }}</th>
-                                            <th class="px-4 py-3">{{ trans('buttons.edit') }}</th>
-                                            <th class="px-4 py-3">{{ trans('buttons.delete') }}</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="bg-white">
-                                        <div class="container">
-                                            @foreach ($products as $product)
-                                                <tr class="text-gray-700">
-                                                    <td class="px-4 py-3 border">
-                                                        <div class="flex items-center text-sm">
-                                                            <p class="font-semibold text-black">{{ $product->name }}
-                                                            </p>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-4 py-3 border">
-                                                        <div class="flex items-center text-sm">
-                                                            <p class="font-semibold text-black">
-                                                                {{ $product->description }}</p>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-4 py-3 border">
-                                                        <div class="flex items-center text-sm">
-                                                            <p class="font-semibold text-black">{{ $product->price }}
-                                                            </p>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-4 py-3 border">
-                                                        <div class="flex items-center text-sm">
-                                                            <x-button-link href="{{ route('product.show', $product) }}">
-                                                                {{ trans('buttons.show') }}</x-button-link>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-4 py-3 border">
-                                                        <div class="flex items-center text-sm">
-                                                            <x-button-link href="{{ route('product.edit', $product) }}">
-                                                                {{ trans('buttons.edit') }}</x-button-link>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-4 py-3 border">
-                                                        <div class="flex items-center text-sm">
-                                                            <form action="{{ route('product.destroy', $product) }}"
-                                                                method="POST">
-                                                                @csrf
-                                                                {{ method_field('DELETE') }}
-                                                                <x-button onclick="return confirm();">
-                                                                    {{ __(trans('buttons.delete')) }}
-                                                                </x-button>
-                                                            </form>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </div>
-                                    </tbody>
-                                </table>
-                            </div>
+                @foreach ($products as $product)
+                    <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+                        <div class="flex items-end justify-end h-56 w-full bg-cover">
+                            <a href="{{ route('product.show', $product) }}">
+                                <img src="{{ asset('storage/'.$product->product_image) }}" alt="{{ $product->name }}">
+                            </a>
                         </div>
-                    </section>
-                </div>
+                        <div class="px-5 py-3" >
+                            <h3 class="text-gray-700 uppercase">{{ $product->name }}</h3>
+                            <span class="text-gray-500 mt-2">{{ $product->price }}</span>
+                        </div>
+                    </div>
+                @endforeach
             </div>
             <div class="m-4">
                 {{ $products->links() }}
             </div>
         </div>
-    </div>
-</x-guest-layout>
+    </main>
+</x-app-layout>

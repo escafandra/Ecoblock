@@ -12,6 +12,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call([
+            ProductSeeder::class,
+        ]);
+
         User::factory()->create([
             'name' => env('ADMIN_NAME', 'admin'),
             'email' => env('ADMIN_MAIL', 'admin@ecoblock.com.co'),
