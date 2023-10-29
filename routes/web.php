@@ -30,10 +30,10 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::resource('product', ProductController::class)
-    ->only(['index', 'show']);
-
 Route::resource('product', ProductController::class)->middleware(['auth'])
     ->except(['index', 'show']);
+
+Route::resource('product', ProductController::class)
+    ->only(['index', 'show']);
 
 require __DIR__.'/auth.php';
