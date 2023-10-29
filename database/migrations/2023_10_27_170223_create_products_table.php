@@ -14,7 +14,7 @@ return new class () extends Migration {
             $table->uuid('id')->primary();
             $table->string('name', 50);
             $table->text('description')->nullable(true);
-            $table->integer('price', 7)->nullable(true);
+            $table->integer('price')->nullable(true);
             $table->json('advantages')->nullable(true);
             $table->json('datasheet')->nullable(true);
             $table->timestamps();
