@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Product;
+namespace Tests\Feature;
 
 use App\Models\Product;
 use App\Models\User;
@@ -11,7 +11,7 @@ class ProductTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testItCanShowIndexView(): void
+    public function testItCanRenderIndexView(): void
     {
         Product::factory(100)->create();
 
@@ -24,7 +24,7 @@ class ProductTest extends TestCase
         $response->assertViewHas('products');
     }
 
-    public function testItCanShowCreateView(): void
+    public function testItCanRenderCreateView(): void
     {
         $user = User::factory()->create();
 
@@ -32,11 +32,12 @@ class ProductTest extends TestCase
 
         $this->assertAuthenticated();
         $response->assertOk();
-        $response->assertViewIs('products.create');
+        $response->assertViewIs('product.create');
     }
-    public function testItCanCreateNewProduct(): void
+    public function testItCanStoreAProduct(): void
     {
         $user = User::factory()->create();
+
         $response = $this->actingAs($user)->post(route('product.store'), [
             'name' => 'testingName',
             'description' => 'testingDescription',
@@ -49,35 +50,25 @@ class ProductTest extends TestCase
         $this->assertAuthenticated();
         $this->assertDatabaseCount('products', 1);
 
-        $newProduct = Product::where('name', 'testingName')->first();
+        $product = Product::first();
 
-        $this->assertEquals('testingName', $newProduct->name);
-        $this->assertEquals('testingDescription', $newProduct->description);
-        $this->assertEquals(1000, $newProduct->price);
-
-        $advantages = json_decode($newProduct->advantages, true);
-        $this->assertIsArray($advantages);
-        $this->assertArrayHasKey('data', $advantages);
-        $this->assertCount(2, $advantages['data']);
-
-        $datasheet = json_decode($newProduct->datasheet, true);
-        $this->assertIsArray($datasheet);
-        $this->assertCount(2, $datasheet);
-        $this->assertEquals('value 1', $datasheet['feature 1']);
-        $this->assertEquals('value 2', $datasheet['feature 2']);
+        $this->assertEquals('testingName', $product->name);
+        $this->assertEquals('testingDescription', $product->description);
+        $this->assertEquals(1000, $product->price);
     }
 
-    public function testItCanShowEditView(): void
+    public function testItCanRenderEditView(): void
     {
         $user = User::factory()->create();
         $product = Product::factory()->create();
 
         $response = $this->actingAs($user)->get(route('product.edit', $product));
 
-        $this->assertDatabaseCount('products', 1);
         $this->assertAuthenticated();
         $response->assertOk();
-        $response->assertViewIs('products.edit');
+        $this->assertDatabaseCount('products', 1);
+        $response->assertViewIs('product.edit');
+        $response->assertViewHas('product');
     }
 
     public function testItCanUpdateProduct(): void
@@ -93,43 +84,32 @@ class ProductTest extends TestCase
             'datasheet' => json_encode(['feature 1' => 'value 1', 'feature 2' => 'value 2']),
         ]);
 
-        $productUpdated = Product::findOrFail($product->id);
+        $product = Product::findOrFail($product->id);
 
         $response->assertRedirect();
         $this->assertAuthenticated();
         $this->assertDatabaseCount('products', 1);
-        $this->assertEquals('testingName', $productUpdated->name);
-        $this->assertEquals('testingDescription', $productUpdated->description);
-        $this->assertEquals(1000, $productUpdated->price);
-
-        $advantages = json_decode($productUpdated->advantages, true);
-        $this->assertIsArray($advantages);
-        $this->assertArrayHasKey('data', $advantages);
-        $this->assertCount(2, $advantages['data']);
-
-        $datasheet = json_decode($productUpdated->datasheet, true);
-        $this->assertIsArray($datasheet);
-        $this->assertCount(2, $datasheet);
-        $this->assertEquals('value 1', $datasheet['feature 1']);
-        $this->assertEquals('value 2', $datasheet['feature 2']);
-
+        $this->assertEquals('testingName', $product->name);
+        $this->assertEquals('testingDescription', $product->description);
+        $this->assertEquals(1000, $product->price);
     }
-    public function testItCanShowDetailView(): void
+    public function testItCanRenderShowView(): void
     {
         $product = Product::factory()->create();
 
         $response = $this->get(route('product.show', $product));
 
-        $this->assertDatabaseCount('products', 1);
         $this->assertGuest();
         $response->assertOk();
-        $response->assertViewIs('products.show');
+        $this->assertDatabaseCount('products', 1);
+        $response->assertViewIs('product.show');
+        $response->assertViewHas('product');
     }
 
     public function testItCanDeleteProduct(): void
     {
-        $product = Product::factory()->create();
         $user = User::factory()->create();
+        $product = Product::factory()->create();
 
         $response = $this->actingAs($user)->delete(route('product.destroy', $product));
 

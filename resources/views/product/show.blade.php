@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __(trans('buttons.show') . ' ' . $product->name) }}
@@ -24,7 +24,7 @@
                             <h3>{{ trans('products.description') . ': ' . $product->description }}</h3>
                         </li>
                         <li>
-                            <h3>{{ trans('products.price') . ': ' . money($product->price.'00') }}
+                            <h3>{{ trans('products.price') . ': ' . $product->price }}
                             </h3>
                         </li>
                         <li>
@@ -41,4 +41,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-guest-layout>

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Products\StoreOrUpdateAction;
+use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -19,28 +22,40 @@ class ProductController extends Controller
         return view('product.index', compact('products'));
     }
 
-    public function create()
+    public function create(): View
     {
-        //
+        return view('product.create');
     }
 
-    public function store(Request $request)
+    public function store(ProductRequest $request): RedirectResponse
     {
+        StoreOrUpdateAction::execute($request);
+
+        return redirect(route('product.index'));
     }
 
-    public function show(string $id)
+    public function show(Product $product): View
     {
+        return view('product.show', compact('product'));
     }
 
-    public function edit(string $id)
+    public function edit(Product $product): View
     {
+
+        return view('product.edit', compact('product'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(ProductRequest $request, Product $product): RedirectResponse
     {
+        StoreOrUpdateAction::execute($request, $product);
+
+        return redirect(route('product.index'));
     }
 
-    public function destroy(string $id)
+    public function destroy(Product $product): RedirectResponse
     {
+        $product->delete();
+
+        return redirect(route('product.index'));
     }
 }
