@@ -50,10 +50,13 @@
             "@php artisan key:generate --ansi"
         ],
         "linter": [
-            "./vendor/bin/php-cs-fixer fix -vvv --dry-run --show-progress=dots"
+            "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --dry-run --stop-on-violation"
         ],
         "fixer": [
-            "./vendor/bin/php-cs-fixer fix -vvv --show-progress=dots"
+            "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php"
+        ],
+        "test": [
+            "vendor/bin/phpunit tests/"
         ]
     },
     "extra": {
