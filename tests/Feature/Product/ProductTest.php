@@ -10,6 +10,20 @@ use Tests\TestCase;
 class ProductTest extends TestCase
 {
     use RefreshDatabase;
+
+    public function testItCanShowIndexView(): void
+    {
+        Product::factory(100)->create();
+
+        $response = $this->get(route('product.index'));
+
+        $this->assertGuest();
+        $response->assertOk();
+        $this->assertDatabaseCount('products', 100);
+        $response->assertViewIs('product.index');
+        $response->assertViewHas('products');
+    }
+
     public function testItCanShowCreateView(): void
     {
         $user = User::factory()->create();
@@ -51,17 +65,6 @@ class ProductTest extends TestCase
         $this->assertCount(2, $datasheet);
         $this->assertEquals('value 1', $datasheet['feature 1']);
         $this->assertEquals('value 2', $datasheet['feature 2']);
-    }
-    public function testItCanShowAllProducts(): void
-    {
-        Product::factory(100)->create();
-
-        $response = $this->post(route('product.index'));
-
-        $this->assertAuthenticated();
-        $response->assertOk();
-        $this->assertDatabaseCount('products', 100);
-        $response->assertViewIs('product.index');
     }
 
     public function testItCanShowEditView(): void

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
@@ -21,6 +22,12 @@ class Product extends Model implements HasMedia
         'advantages',
         'datasheet',
     ];
+
+    public function scopeSearch(Builder $query, ?string $search = null): Builder
+    {
+        return $search ? $query->where('name', 'like', '%' . trim($search) . '%')
+            ->orWhere('description', 'like', '%' . trim($search) . '%') : $query;
+    }
 
     public function registerMediaConversions(Media $media = null): void
     {

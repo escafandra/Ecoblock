@@ -1,7 +1,7 @@
-<x-app-layout>
+<x-guest-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __(trans('navigation.products')) }}
+            {{ trans('navigation.products') }}
         </h2>
     </x-slot>
 
@@ -19,13 +19,9 @@
                                     <thead>
                                         <tr
                                             class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-                                            <th class="px-4 py-3">{{ trans('products.image') }}</th>
-                                            <th class="px-4 py-3">Id</th>
                                             <th class="px-4 py-3">{{ trans('products.name') }}</th>
                                             <th class="px-4 py-3">{{ trans('products.description') }}</th>
-                                            <th class="px-4 py-3">{{ trans('products.category') }}</th>
                                             <th class="px-4 py-3">{{ trans('products.price') }}</th>
-                                            <th class="px-4 py-3">Stock</th>
                                             <th class="px-4 py-3">{{ trans('buttons.show') }}</th>
                                             <th class="px-4 py-3">{{ trans('buttons.edit') }}</th>
                                             <th class="px-4 py-3">{{ trans('buttons.delete') }}</th>
@@ -35,18 +31,6 @@
                                         <div class="container">
                                             @foreach ($products as $product)
                                                 <tr class="text-gray-700">
-                                                    <td class="px-4 py-3 border">
-                                                        <div class="flex items-center text-sm">
-                                                            <img src="{{ asset('storage/'.$product->product_image) }}"
-                                                                alt="Image" width="70px" height="70px">
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-4 py-3 border">
-                                                        <div class="flex items-center text-sm">
-                                                            <p class="font-semibold text-black">{{ $product->id }}
-                                                            </p>
-                                                        </div>
-                                                    </td>
                                                     <td class="px-4 py-3 border">
                                                         <div class="flex items-center text-sm">
                                                             <p class="font-semibold text-black">{{ $product->name }}
@@ -61,37 +45,25 @@
                                                     </td>
                                                     <td class="px-4 py-3 border">
                                                         <div class="flex items-center text-sm">
-                                                            <p class="font-semibold text-black">
-                                                                {{ $product->category->name }}</p>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-4 py-3 border">
-                                                        <div class="flex items-center text-sm">
-                                                            <p class="font-semibold text-black">{{ money($product->price.'00') }}
+                                                            <p class="font-semibold text-black">{{ $product->price }}
                                                             </p>
                                                         </div>
                                                     </td>
                                                     <td class="px-4 py-3 border">
                                                         <div class="flex items-center text-sm">
-                                                            <p class="font-semibold text-black">{{ number_format($product->stock, 0, ',','.') }}
-                                                            </p>
-                                                        </div>
-                                                    </td>
-                                                    <td class="px-4 py-3 border">
-                                                        <div class="flex items-center text-sm">
-                                                            <x-button-link href="{{ $product->showRoute() }}">
+                                                            <x-button-link href="{{ route('product.show', $product) }}">
                                                                 {{ trans('buttons.show') }}</x-button-link>
                                                         </div>
                                                     </td>
                                                     <td class="px-4 py-3 border">
                                                         <div class="flex items-center text-sm">
-                                                            <x-button-link href="{{ $product->editRoute() }}">
+                                                            <x-button-link href="{{ route('product.edit', $product) }}">
                                                                 {{ trans('buttons.edit') }}</x-button-link>
                                                         </div>
                                                     </td>
                                                     <td class="px-4 py-3 border">
                                                         <div class="flex items-center text-sm">
-                                                            <form action="{{ $product->destroyRoute() }}"
+                                                            <form action="{{ route('product.destroy', $product) }}"
                                                                 method="POST">
                                                                 @csrf
                                                                 {{ method_field('DELETE') }}
@@ -116,4 +88,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-guest-layout>
