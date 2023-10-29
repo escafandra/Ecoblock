@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Actions\Products;
+namespace App\Actions;
 
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
-class StoreOrUpdateAction
+class ProductStoreAction
 {
     public static function execute(Request $request, ?Model $model = null): Model
     {

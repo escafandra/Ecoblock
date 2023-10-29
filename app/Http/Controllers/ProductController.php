@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Actions\Products\StoreOrUpdateAction;
+use App\Actions\ProductStoreAction;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
@@ -29,7 +29,7 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request): RedirectResponse
     {
-        StoreOrUpdateAction::execute($request);
+        ProductStoreAction::execute($request);
 
         return redirect(route('product.index'));
     }
@@ -47,7 +47,7 @@ class ProductController extends Controller
 
     public function update(ProductRequest $request, Product $product): RedirectResponse
     {
-        StoreOrUpdateAction::execute($request, $product);
+        ProductStoreAction::execute($request, $product);
 
         return redirect(route('product.index'));
     }
