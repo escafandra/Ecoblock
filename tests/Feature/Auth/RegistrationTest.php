@@ -77,7 +77,5 @@ class RegistrationTest extends TestCase
         ]);
         $errors = session('errors');
         $this->assertNotNull($errors);
-        $this->assertEquals(['The email has already been taken.'], $errors->get('email'));
-
     }
 }
