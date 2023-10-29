@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
@@ -34,6 +35,12 @@ Route::resource('product', ProductController::class)->middleware(['auth'])
     ->except(['index', 'show']);
 
 Route::resource('product', ProductController::class)
+    ->only(['index', 'show']);
+
+Route::resource('project', ProjectController::class)->middleware(['auth'])
+    ->except(['index', 'show']);
+
+Route::resource('project', ProjectController::class)
     ->only(['index', 'show']);
 
 require __DIR__.'/auth.php';
