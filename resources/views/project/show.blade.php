@@ -11,8 +11,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <ul>
                         <li>
-                            <img src="{{ asset('storage/' . $project->project_image) }}" alt="Image" width="200px"
-                                height="200px">
+                            <img src="{{ $project->getFirstMediaUrl('images', 'preview')}}">
                         </li>
                         <li>
                             <h3>Id: {{ $project->id }}</h3>

@@ -11,21 +11,13 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <ul>
                         <li>
-                            <img src="{{ asset('storage/' . $product->product_image) }}" alt="Image" width="200px"
-                                height="200px">
-                        </li>
-                        <li>
-                            <h3>Id: {{ $product->id }}</h3>
+                            <img src="{{ $product->getFirstMediaUrl('images', 'preview')}}">
                         </li>
                         <li>
                             <h3>{{ trans('products.name') . ': ' . $product->name }}</h3>
                         </li>
                         <li>
                             <h3>{{ trans('products.description') . ': ' . $product->description }}</h3>
-                        </li>
-                        <li>
-                            <h3>{{ trans('products.price') . ': ' . $product->price }}
-                            </h3>
                         </li>
                     </ul>
                 </div>

@@ -18,7 +18,7 @@
                     <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
                         <div class="flex items-end justify-end h-56 w-full bg-cover">
                             <a href="{{ route('product.show', $product) }}">
-                                <img src="{{ asset('storage/'.$product->product_image) }}" alt="{{ $product->name }}">
+                                <img src="{{ $product->getFirstMediaUrl('images', 'preview')}}">
                             </a>
                         </div>
                         <div class="px-5 py-3" >
