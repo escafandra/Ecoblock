@@ -12,7 +12,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Product extends Model implements HasMedia
+class Project extends Model implements HasMedia
 {
     use HasFactory;
     use InteractsWithMedia;
@@ -20,9 +20,6 @@ class Product extends Model implements HasMedia
     protected $fillable = [
         'name',
         'description',
-        'price',
-        'advantages',
-        'datasheet',
     ];
 
     public function scopeSearch(Builder $query, ?string $search = null): Builder
@@ -31,9 +28,9 @@ class Product extends Model implements HasMedia
             ->orWhere('description', 'like', '%' . trim($search) . '%') : $query;
     }
 
-    public function projects(): BelongsToMany
+    public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Project::class);
+        return $this->belongsToMany(Product::class);
     }
 
     /**

@@ -5,4 +5,5 @@ return [
     'dashboard' => 'Tablero',
     'products' => 'Productos',
     'catalog' => 'Catálogo',
+    'projects' => 'Proyectos',
 ];

@@ -24,6 +24,9 @@
                         <x-nav-link :href="route('product.index')" :active="request()->routeIs('product.index')">
                             {{ __(trans('navigation.products')) }}
                         </x-nav-link>
+                        <x-nav-link :href="route('project.index')" :active="request()->routeIs('project.index')">
+                            {{ __(trans('navigation.projects')) }}
+                        </x-nav-link>
                 </div>
             </div>
 
@@ -89,6 +92,13 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __(trans('navigation.dashboard')) }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('product.index')" :active="request()->routeIs('product.index')">
+                {{ __(trans('navigation.products')) }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('project.index')" :active="request()->routeIs('project.index')">
+                {{ __(trans('navigation.projects')) }}
+            </x-responsive-nav-link>
+
         </div>
 
         <!-- Responsive Settings Options -->
