@@ -42,6 +42,9 @@ class ProjectTest extends TestCase
         $response = $this->actingAs($user)->post(route('project.store'), [
             'name' => 'testingName',
             'description' => 'testingDescription',
+            'initial_date' => now()->subMonth(),
+            'final_date' => now()->addMonth(),
+            'customer' => 'John Doe',
             'images' => [UploadedFile::fake()->image('testing-name-1.jpg'), UploadedFile::fake()->image('testing-name-2.png')],
             'video' => UploadedFile::fake()->create('video.mp4')
         ]);
@@ -78,6 +81,9 @@ class ProjectTest extends TestCase
         $response = $this->actingAs($user)->put(route('project.update', $project), [
             'name' => 'testingName',
             'description' => 'testingDescription',
+            'initial_date' => now()->subMonth(),
+            'final_date' => now()->addMonth(),
+            'customer' => 'John Doe',
             'images' => [UploadedFile::fake()->image('testing-name-1.jpg'), UploadedFile::fake()->image('testing-name-2.png')],
             'video' => UploadedFile::fake()->create('video.mp4')
         ]);

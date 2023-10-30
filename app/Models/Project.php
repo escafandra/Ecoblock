@@ -20,6 +20,9 @@ class Project extends Model implements HasMedia
     protected $fillable = [
         'name',
         'description',
+        'initial_date',
+        'final_date',
+        'customer'
     ];
 
     public function scopeSearch(Builder $query, ?string $search = null): Builder

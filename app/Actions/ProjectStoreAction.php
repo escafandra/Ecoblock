@@ -14,6 +14,9 @@ class ProjectStoreAction
         $product = $model ?? new Project();
         $product->name = $request->input('name');
         $product->description = $request->input('description');
+        $product->initial_date = $request->input('initial_date');
+        $product->final_date = $request->input('final_date');
+        $product->customer = $request->input('customer');
 
         $product->save();
 
