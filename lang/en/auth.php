@@ -14,7 +14,8 @@ return [
     */
 
     'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
+    'badPassword' => 'The provided password is incorrect.',
+    'password' => 'Password',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'confirmMessage' => 'This is a secure area of the application. Please confirm your password before continuing.',
     'forgotMessage' => 'Forgot your password? No problem. Just tell us your email address and we will send you a password reset link that will allow you to choose a new one.',

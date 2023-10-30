@@ -14,7 +14,8 @@ return [
     */
 
     'failed' => 'Estas credenciales no coinciden con nuestros registros.',
-    'password' => 'La contraseña proporcionada es incorrecta.',
+    'badPassword' => 'La contraseña proporcionada es incorrecta.',
+    'password' => 'Contraseña',
     'throttle' => 'Demasiados intentos de inicio de sesión. Por favor, inténtelo de nuevo en :seconds seconds.',
     'forgotMessage' => '¿Ha olvidado su contraseña? No hay problema. Sólo tiene que indicarnos su dirección de correo electrónico y le enviaremos un enlace para restablecer la contraseña que le permitirá elegir una nueva.',
     'confirmMessage' => 'Esta es una zona segura de la aplicación. Por favor, confirme su contraseña antes de continuar.',
