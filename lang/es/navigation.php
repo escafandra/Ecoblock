@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'users' => 'Usuarios',
-    'dashboard' => 'Tablero',
     'products' => 'Productos',
-    'catalog' => 'Catálogo',
     'projects' => 'Proyectos',
+    'about' => 'Nosotros',
+    'contact' => 'Contacto',
+    'profile' => 'Perfil',
 ];
