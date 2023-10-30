@@ -17,4 +17,5 @@ return [
     'search' => 'Buscar',
     'back' => 'Volver',
     'choose' => 'Seleccione',
+    'send' => 'Enviar',
 ];
