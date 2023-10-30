@@ -4,7 +4,7 @@ return [
     'save' => 'Save',
     'logOut' => 'Log Out',
     'logIn' => 'Log In',
-    'signUp' => 'Sign Up',
+    'signUp' => 'To register',
     'show' => 'Show',
     'edit' => 'Edit',
     'delete' => 'Delete',
