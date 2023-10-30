@@ -36,6 +36,13 @@ class Product extends Model implements HasMedia
         return $this->belongsToMany(Project::class);
     }
 
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('images');
+
+        $this->addMediaCollection('videos');
+    }
+
     /**
      * @throws InvalidManipulation
      */
