@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
 use Tests\TestCase;
 
 class ProjectTest extends TestCase
@@ -41,6 +42,11 @@ class ProjectTest extends TestCase
         $response = $this->actingAs($user)->post(route('project.store'), [
             'name' => 'testingName',
             'description' => 'testingDescription',
+            'initial_date' => now()->subMonth(),
+            'final_date' => now()->addMonth(),
+            'customer' => 'John Doe',
+            'images' => [UploadedFile::fake()->image('testing-name-1.jpg'), UploadedFile::fake()->image('testing-name-2.png')],
+            'video' => UploadedFile::fake()->create('video.mp4')
         ]);
 
         $response->assertRedirect();
@@ -75,6 +81,11 @@ class ProjectTest extends TestCase
         $response = $this->actingAs($user)->put(route('project.update', $project), [
             'name' => 'testingName',
             'description' => 'testingDescription',
+            'initial_date' => now()->subMonth(),
+            'final_date' => now()->addMonth(),
+            'customer' => 'John Doe',
+            'images' => [UploadedFile::fake()->image('testing-name-1.jpg'), UploadedFile::fake()->image('testing-name-2.png')],
+            'video' => UploadedFile::fake()->create('video.mp4')
         ]);
 
         $project = Project::findOrFail($project->id);
