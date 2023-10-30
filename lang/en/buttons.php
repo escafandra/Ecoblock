@@ -8,6 +8,7 @@ return [
     'show' => 'Show',
     'edit' => 'Edit',
     'delete' => 'Delete',
+    'cancel' => 'Cancel',
     'confirm' => 'Confirm',
     'reset' => 'Reset Password',
     'register' => 'Register?',
@@ -16,4 +17,5 @@ return [
     'search' => 'Search',
     'back' => 'Back',
     'choose' => 'Choose',
+    'send' => 'Send',
 ];

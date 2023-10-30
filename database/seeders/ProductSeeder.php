@@ -10,7 +10,7 @@ class ProductSeeder extends Seeder
 {
     public function run(): void
     {
-        Product::factory()->create([
+        $product = Product::factory()->create([
             'name' => 'ULTRA Pego',
             'description' => 'Cemento líquido para pegar paneles y bloques.  Mayor adherencia en un menor tiempo.',
             'price' => null,
@@ -18,7 +18,10 @@ class ProductSeeder extends Seeder
             'datasheet' => json_encode(['Tipo' => 'Mortero a base de resina cremosa', 'Color' => 'Gris, Multicolor'])
         ]);
 
-        Product::factory()->create([
+        $product->addMedia('public/images/products/ultra-pego.png')->preservingOriginal()->toMediaCollection('images');
+
+
+        $product = Product::factory()->create([
             'name' => 'ULTRA Stucco',
             'description' => 'Pasta para paneles y bloques a base de resinas acrílicas con mayor adherencia y resistencia.',
             'price' => null,
@@ -26,12 +29,18 @@ class ProductSeeder extends Seeder
             'datasheet' => json_encode(['Tipo' => 'Mortero a base de resina cremosa', 'Color' => 'Gris, Multicolor'])
         ]);
 
-        Product::factory()->create([
+        $product->addMedia('public/images/products/ultra-stucco.png')->preservingOriginal()->toMediaCollection('images');
+
+
+        $product = Product::factory()->create([
             'name' => 'ULTRA Tech Master',
             'description' => 'Mortero para friso de paneles interiores. Fácil aplicación, excelente acabado,',
             'price' => null,
             'advantages' => json_encode(['Preparación lista para usar', 'Bajo olor', 'Práctico', 'Cero desperdicio', 'Construcción en limpio', 'Rendimiento en obra', 'Excelente adherencia', 'Disminuye cargas muertas', 'No inflamable', 'No contaminante', 'Impermeable', 'Pega sobre amplia gama de materiales']),
             'datasheet' => json_encode(['Tipo' => 'Mortero a base de resina cremosa', 'Color' => 'Gris, Multicolor'])
         ]);
+
+        $product->addMedia('public/images/products/ultra-tech-master.png')->preservingOriginal()->toMediaCollection('images');
+
     }
 }
