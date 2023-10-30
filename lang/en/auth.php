@@ -24,6 +24,7 @@ return [
     'forgot' => 'Forgot your password?',
     'name' => 'Name',
     'confirm' => 'Confirm password',
+    'createAccount' => 'Create account',
     'registered' => 'Registered already?',
     'verifyMessage' => 'Thank you for registering. Before we get started, could you please verify your email address by clicking on the link we just sent you? If you haven\'t received the email, we\'ll be happy to send you another one.',
     'sentMessage' => 'A new verification link has been sent to the email address you provided during registration.',

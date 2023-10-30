@@ -24,6 +24,7 @@ return [
     'forgot' => '¿Olvidó su contraseña?',
     'name' => 'Nombre',
     'confirm' => 'Confirmar contraseña',
+    'createAccount' => 'Crear nueva cuenta',
     'registered' => '¿Ya está registrado?',
     'verifyMessage' => 'Gracias por registrarte. Antes de empezar, ¿podrías verificar tu dirección de correo electrónico haciendo clic en el enlace que acabamos de enviarte? Si no has recibido el correo electrónico, te enviaremos otro con mucho gusto.',
     'sentMessage' => 'Se ha enviado un nuevo enlace de verificación a la dirección de correo electrónico que proporcionó durante el registro.',
