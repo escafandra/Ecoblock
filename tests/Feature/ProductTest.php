@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
 use Tests\TestCase;
 
 class ProductTest extends TestCase
@@ -44,6 +45,8 @@ class ProductTest extends TestCase
             'price' => 1000,
             'advantages' => json_encode(['data' => ['advantage 1', 'advantage 2']]),
             'datasheet' => json_encode(['feature 1' => 'value 1', 'feature 2' => 'value 2']),
+            'images' => [UploadedFile::fake()->image('testing-name-1.jpg'), UploadedFile::fake()->image('testing-name-2.png')],
+            'video' => UploadedFile::fake()->create('video.mp4')
         ]);
 
         $response->assertRedirect();
@@ -77,11 +80,13 @@ class ProductTest extends TestCase
         $user = User::factory()->create();
 
         $response = $this->actingAs($user)->put(route('product.update', $product), [
-            'name' => 'testingName',
-            'description' => 'testingDescription',
+            'name' => 'Testing Name',
+            'description' => 'Testing Description',
             'price' => 1000,
             'advantages' => json_encode(['data' => ['advantage 1', 'advantage 2']]),
             'datasheet' => json_encode(['feature 1' => 'value 1', 'feature 2' => 'value 2']),
+            'images' => [UploadedFile::fake()->image('testing-name-1.jpg'), UploadedFile::fake()->image('testing-name-2.png')],
+            'video' => UploadedFile::fake()->create('video.mp4')
         ]);
 
         $product = Product::findOrFail($product->id);
@@ -89,8 +94,8 @@ class ProductTest extends TestCase
         $response->assertRedirect();
         $this->assertAuthenticated();
         $this->assertDatabaseCount('products', 1);
-        $this->assertEquals('testingName', $product->name);
-        $this->assertEquals('testingDescription', $product->description);
+        $this->assertEquals('Testing Name', $product->name);
+        $this->assertEquals('Testing Description', $product->description);
         $this->assertEquals(1000, $product->price);
     }
     public function testItCanRenderShowView(): void

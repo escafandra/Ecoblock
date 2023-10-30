@@ -20,6 +20,9 @@ class Project extends Model implements HasMedia
     protected $fillable = [
         'name',
         'description',
+        'initial_date',
+        'final_date',
+        'customer'
     ];
 
     public function scopeSearch(Builder $query, ?string $search = null): Builder
@@ -31,6 +34,13 @@ class Project extends Model implements HasMedia
     public function products(): BelongsToMany
     {
         return $this->belongsToMany(Product::class);
+    }
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('images');
+
+        $this->addMediaCollection('videos');
     }
 
     /**
