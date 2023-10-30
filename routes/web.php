@@ -43,4 +43,12 @@ Route::resource('project', ProjectController::class)->middleware(['auth'])
 Route::resource('project', ProjectController::class)
     ->only(['index', 'show']);
 
+Route::get('about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('contact', function () {
+    return view('contact');
+})->name('contact');
+
 require __DIR__.'/auth.php';

@@ -7,7 +7,7 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <img
-                            src="{{ asset('images/logo.png') }}"
+                            src="{{ asset('images/logos/white-eco-no-background.png') }}"
                             alt="Ecoblock logo"
                             width="150"
                         />
@@ -16,17 +16,18 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    @auth
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __(trans('navigation.dashboard')) }}
-                        </x-nav-link>
-                    @endauth
-                        <x-nav-link :href="route('product.index')" :active="request()->routeIs('product.index')">
-                            {{ __(trans('navigation.products')) }}
-                        </x-nav-link>
-                        <x-nav-link :href="route('project.index')" :active="request()->routeIs('project.index')">
-                            {{ __(trans('navigation.projects')) }}
-                        </x-nav-link>
+                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                        {{ __(trans('navigation.about')) }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('product.index')" :active="request()->routeIs('product.index')">
+                        {{ __(trans('navigation.products')) }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('project.index')" :active="request()->routeIs('project.index')">
+                        {{ __(trans('navigation.projects')) }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+                        {{ __(trans('navigation.contact')) }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -48,6 +49,9 @@
                         </x-slot>
                         <x-slot name="content">
                             <!-- Authentication -->
+                            <x-dropdown-link :href="route('profile.edit')">
+                                {{ trans('navigation.profile') }}
+                            </x-dropdown-link>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
@@ -89,15 +93,18 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __(trans('navigation.dashboard')) }}
-            </x-responsive-nav-link>
+            <x-nav-link :href="route('project.index')" :active="request()->routeIs('project.index')">
+                {{ __(trans('navigation.about')) }}
+            </x-nav-link>
             <x-responsive-nav-link :href="route('product.index')" :active="request()->routeIs('product.index')">
                 {{ __(trans('navigation.products')) }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('project.index')" :active="request()->routeIs('project.index')">
                 {{ __(trans('navigation.projects')) }}
             </x-responsive-nav-link>
+            <x-nav-link :href="route('project.index')" :active="request()->routeIs('project.index')">
+                {{ __(trans('navigation.contact')) }}
+            </x-nav-link>
 
         </div>
 
@@ -113,7 +120,9 @@
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-
+                        <x-responsive-nav-link :href="route('profile.edit')">
+                            {{ trans('navigation.profile') }}
+                        </x-responsive-nav-link>
                         <x-responsive-nav-link :href="route('logout')"
                                                onclick="event.preventDefault();
                                             this.closest('form').submit();">
