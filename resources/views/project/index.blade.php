@@ -18,12 +18,11 @@
                     <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
                         <div class="flex items-end justify-end h-56 w-full bg-cover">
                             <a href="{{ route('project.show', $project) }}">
-                                <img src="{{ asset('storage/'.$project->project_image) }}" alt="{{ $project->name }}">
+                                <img src="{{ $project->getFirstMediaUrl('images', 'preview')}}">
                             </a>
                         </div>
                         <div class="px-5 py-3" >
                             <h3 class="text-gray-700 uppercase">{{ $project->name }}</h3>
-                            <span class="text-gray-500 mt-2">{{ $project->price }}</span>
                         </div>
                     </div>
                 @endforeach
