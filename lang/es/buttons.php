@@ -7,6 +7,7 @@ return [
     'signUp' => 'Registrar',
     'show' => 'Ver',
     'edit' => 'Editar',
+    'cancel' => 'Cancelar',
     'confirm' => 'Confirmar',
     'reset' => 'Cambiar contraseña',
     'register' => '¿Registrarse?',
