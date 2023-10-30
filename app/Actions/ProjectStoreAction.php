@@ -17,6 +17,14 @@ class ProjectStoreAction
 
         $product->save();
 
+        if ($request->has('images')) {
+            $product->addMediaFromRequest('images')->toMediaCollection('images');
+        }
+
+        if ($request->has('video')) {
+            $product->addMediaFromRequest('video')->toMediaCollection('video');
+        }
+
         return $product;
     }
 }
