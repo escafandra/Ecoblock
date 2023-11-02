@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
     <div class="text-center">
-        <h2 class="section-heading text-uppercase">Services</h2>
-        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        <h2 class="section-heading text-uppercase">Productos</h2>
+        <h3 class="section-subheading text-muted">La mejor calidad a su disposición</h3>
     </div>
     <div class="row text-center">
         @foreach ($products as $product)
