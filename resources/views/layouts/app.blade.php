@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css', 'resources/js/scripts.js'])
 </head>
 <body id="page-top">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
