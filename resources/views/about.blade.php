@@ -1,11 +1,62 @@
 @extends('layouts.app')
 @section('content')
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ trans('navigation.about') }}
-        </h2>
-    </x-slot>
-
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Nosotros</h2>
+            <h3 class="section-subheading text-muted">La mejor opción en construcción</h3>
+        </div>
+        <ul class="timeline">
+            <li>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>Misión</h4>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted">Forjar un futuro sostenible liderando la transformación de la construcción. Con soluciones vanguardistas, creando edificaciones que fusionan excelencia y responsabilidad ambiental. Construimos más que estructuras, construimos un mundo habitable para todos.</p></div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>March 2011</h4>
+                        <h4 class="subheading">An Agency is Born</h4>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>December 2015</h4>
+                        <h4 class="subheading">Transition to Full Service</h4>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>July 2020</h4>
+                        <h4 class="subheading">Phase Two Expansion</h4>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-image">
+                    <h4>
+                        Be Part
+                        <br />
+                        Of Our
+                        <br />
+                        Story!
+                    </h4>
+                </div>
+            </li>
+        </ul>
+    </div>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -45,5 +96,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection
