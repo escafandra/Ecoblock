@@ -46,9 +46,11 @@
             </div>
         </div>
     </nav>
-    <div class="container" style="margin-top: 10rem">
-        @yield('content')
-    </div>
+    <section class="page-section">
+        <div class="container mt-3">
+            @yield('content')
+        </div>
+    </section>
 
 </body>
 </html>
