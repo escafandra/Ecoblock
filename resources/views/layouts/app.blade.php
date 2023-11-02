@@ -23,33 +23,32 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css', 'resources/js/scripts.js'])
+    @vite(['resources/css/app.css', 'resources/js/scripts.js'])
 </head>
 <body id="page-top">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="{{ route('dashboard')  }}">
-                    <img src="{{ asset('images/logos/white-eco-no-background.png') }}"
-                            alt="Ecoblock logo"/>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ms-1"></i>
-                </button>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="{{ route('dashboard')  }}">
+                <img src="{{ asset('images/logos/white-eco-no-background.png') }}" alt="Ecoblock logo"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">{{ (trans('navigation.about')) }}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('product.index') }}">{{ (trans('navigation.products')) }}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('project.index') }}">{{ (trans('navigation.projects')) }}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">{{ (trans('navigation.contact')) }}</a></li>
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">{{ (trans('navigation.about')) }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('product.index') }}">{{ (trans('navigation.products')) }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('project.index') }}">{{ (trans('navigation.projects')) }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">{{ (trans('navigation.contact')) }}</a></li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+    <main class="py-4">
+        @yield('content')
+    </main>
 </body>
 </html>
