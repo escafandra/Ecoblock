@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/scripts.js'])
+    @vite(['resources/css/app.css', 'resources/js/scripts.js', 'resources/js/app.js'])
 </head>
 <body id="page-top">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -51,6 +51,6 @@
             @yield('content')
         </div>
     </section>
-
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>
