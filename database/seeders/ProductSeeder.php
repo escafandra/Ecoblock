@@ -62,7 +62,8 @@ class ProductSeeder extends Seeder
 
         $product->addMedia('public/images/products/panel.png')->preservingOriginal()->toMediaCollection('images');
 
-        $product = Product::factory()->create([
+        Product::factory()->create([
+            'enabled' => false,
             'name' => 'ULTRA Paint',
             'description' => 'Pintura blanca tipo 1 lavable fabricada a base de vinilo',
             'price' => null,

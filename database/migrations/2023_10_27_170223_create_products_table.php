@@ -9,6 +9,7 @@ return new class () extends Migration {
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->boolean('enabled')->default(true);
             $table->string('name');
             $table->text('description')->nullable(true);
             $table->integer('price')->nullable(true);
