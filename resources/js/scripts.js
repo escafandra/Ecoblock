@@ -5,7 +5,9 @@
 */
 //
 // Scripts
-// 
+//
+
+
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -23,7 +25,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     };
 
-    // Shrink the navbar 
+    // Shrink the navbar
     navbarShrink();
 
     // Shrink the navbar when page is scrolled
@@ -36,7 +38,7 @@ window.addEventListener('DOMContentLoaded', event => {
             target: '#mainNav',
             rootMargin: '0px 0px -40%',
         });
-    };
+    }
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
@@ -50,5 +52,11 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
 });
+
+const myCarouselElement = document.querySelector('#welcomeCarousel')
+
+const carousel = new bootstrap.Carousel(myCarouselElement, {
+    interval: 2000,
+    touch: false
+})
