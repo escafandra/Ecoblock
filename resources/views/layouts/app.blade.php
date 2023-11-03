@@ -29,7 +29,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="{{ route('welcome')  }}">
-                <img src="{{ asset('images/logos/white-eco-no-background.png') }}" alt="Ecoblock logo"/>
+                <img src="{{ asset('images/logos/blue-eco.png') }}" alt="logo"/>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -47,7 +47,7 @@
         </div>
     </nav>
     <section class="page-section">
-        <div class="container mt-3">
+        <div class="container mt-4">
             @yield('content')
         </div>
     </section>
