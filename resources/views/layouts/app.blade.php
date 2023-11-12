@@ -60,8 +60,8 @@
                     <a class="btn btn-light btn-social mx-2" href="https://www.linkedin.com/company/ecological-block-systems/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <div class="col-lg-4 text-lg-end">
-                    <a class="link-dark text-decoration-none me-3" href="#">Políticas de Privacidad</a>
-                    <a class="link-dark text-decoration-none" href="#">Términos de Uso</a>
+                    <a class="link-dark text-decoration-none me-3" href="{{ route('privacy') }}">Políticas de Privacidad</a>
+                    <a class="link-dark text-decoration-none" href="{{ route('terms') }}">Términos de Uso</a>
                 </div>
             </div>
         </div>
