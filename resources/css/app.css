@@ -73,8 +73,8 @@
     --bs-border-radius-xl: 1rem;
     --bs-border-radius-2xl: 2rem;
     --bs-border-radius-pill: 50rem;
-    --bs-link-color: #ffc800;
-    --bs-link-hover-color: #cca000;
+    --bs-link-color: #67a0f5;
+    --bs-link-hover-color: #67a0f5;
     --bs-code-color: #d63384;
     --bs-highlight-bg: #fff4cc;
 }
@@ -250,7 +250,7 @@ a {
     text-decoration: underline;
 }
 a:hover {
-    color: var(--bs-link-hover-color);
+    color: #67a0f5;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -3631,7 +3631,7 @@ textarea.form-control-lg {
     --bs-nav-link-padding-y: 0.5rem;
     --bs-nav-link-font-weight: ;
     --bs-nav-link-color: var(--bs-link-color);
-    --bs-nav-link-hover-color: var(--bs-link-hover-color);
+    --bs-nav-link-hover-color: #67a0f5;
     --bs-nav-link-disabled-color: #6c757d;
     display: flex;
     flex-wrap: wrap;
@@ -10926,7 +10926,7 @@ p {
     letter-spacing: 0.0625em;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #ffc800;
+    color: #574E4C;
 }
 
 @media (min-width: 992px) {
@@ -11304,7 +11304,7 @@ section#contact form#contactForm p.help-block {
     margin: 0;
 }
 section#contact form#contactForm .form-control:focus {
-    border-color: #ffc800;
+    border-color: #B7D552;
     box-shadow: none;
 }
 section#contact form#contactForm ::-webkit-input-placeholder {
