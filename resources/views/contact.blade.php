@@ -1,11 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <section class="page-contact" id="contact">
+    <section class="page-section" id="contact">
         <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">{{ trans('contact.header.title') }}</h2>
-                <h3 class="section-subheading text-muted">{{ trans('contact.header.message') }}</h3>
-            </div>
             <form id="contactForm" action="{{ route('contact.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row align-items-stretch mb-3">
