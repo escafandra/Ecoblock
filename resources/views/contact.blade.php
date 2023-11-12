@@ -1,39 +1,47 @@
 @extends('layouts.app')
 @section('content')
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ trans('navigation.contact') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <x-validation-errors class="mb-4" :errors="$errors" />
-                    <form action="{{ route('contact.store') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div>
-                            <x-label for="name" :value="__(trans('contact.name'))" />
-                            <x-input id="name" class="block mt-1 w-full" type="text" name="name" required autofocus />
-                        </div>
-                        <div>
-                            <x-label for="name" :value="__(trans('contact.email'))" />
-                            <x-input id="name" class="block mt-1 w-full" type="text" name="name" required autofocus />
-                        </div>
-                        <div class="mt-4">
-                            <x-label for="description" :value="__(trans('contact.message'))" />
-                            <x-textarea id="description" class="block mt-1 w-full" name="description" required>
-                            </x-textarea>
-                        </div>
-                        <div class="flex items-center justify-end mt-4">
-                            <x-button class="ml-4">
-                                {{ __(trans('buttons.send')) }}
-                            </x-button>
-                        </div>
-                    </form>
-                </div>
+    <section class="page-contact" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">{{ trans('contact.header.title') }}</h2>
+                <h3 class="section-subheading text-muted">{{ trans('contact.header.message') }}</h3>
             </div>
+            <form id="contactForm" action="{{ route('contact.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row align-items-stretch mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" name="name" id="name" type="text" placeholder="{{ trans('contact.name') }}" data-sb-validations="required" required />
+                            <div class="invalid-feedback" data-sb-feedback="name:required">{{ trans('validation.required') }}</div>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" name="email" id="email" type="email" placeholder="{{ trans('contact.email') }}" data-sb-validations="required,email" required />
+                            <div class="invalid-feedback" data-sb-feedback="email:required">{{ trans('validation.required') }}</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">{{ trans('validation.email') }}</div>
+                        </div>
+                        <div class="form-group mb-md-0">
+                            <input class="form-control" name="phone" id="phone" type="tel" placeholder="{{ trans('contact.phone') }}" data-sb-validations="required,phone" required />
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">{{ trans('validation.required') }}</div>
+                            <div class="invalid-feedback" data-sb-feedback="phone:phone">{{ trans('validation.phone') }}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-group-textarea mb-md-0">
+                            <textarea class="form-control" name="message" id="message" placeholder="{{ trans('contact.message') }}" data-sb-validations="required" required></textarea>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">{{ trans('validation.required') }}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-none" id="submitSuccessMessage">
+                    <div class="text-center text-white mb-3">
+                        <div class="fw-bolder">{{ trans('contact.state.success') }}</div>
+                    </div>
+                </div>
+
+                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">{{ trans('contact.state.error') }}</div></div>
+                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">{{ trans('buttons.send') }}</button></div>
+            </form>
         </div>
-    </div>
+    </section>
 @endsection
