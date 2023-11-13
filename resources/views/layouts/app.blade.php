@@ -46,11 +46,9 @@
             </div>
         </div>
     </nav>
-    <section class="page-section">
-        <div class="container mt-4">
-            @yield('content')
-        </div>
-    </section>
+
+    @yield('content')
+
     <footer class="footer py-4">
         <div class="container">
             <div class="row align-items-center">
