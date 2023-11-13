@@ -487,27 +487,6 @@ progress {
     display: none !important;
 }
 
-.small-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
-
-@media (min-width: 768px) {
-    .small-image {
-        width: 250px;
-        height: 250px;
-        object-fit: cover;
-    }
-}
-@media (min-width: 1200px) {
-    .small-image {
-        width: 350px;
-        height: 350px;
-        object-fit: cover;
-    }
-}
-
 .lead {
     font-size: 1.25rem;
     font-weight: 300;
