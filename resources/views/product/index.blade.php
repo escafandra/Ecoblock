@@ -64,12 +64,6 @@
                                         @endforeach
                                     </ul>
                                     <table class="table mb-5">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Característica</th>
-                                                <th scope="col">Valor</th>
-                                            </tr>
-                                        </thead>
                                         <tbody>
                                             @foreach(json_decode($product->datasheet, true) as $feature => $value)
                                                 <tr>
