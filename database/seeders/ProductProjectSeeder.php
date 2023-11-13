@@ -16,7 +16,7 @@ class ProductProjectSeeder extends Seeder
             [
                 'product_id' => Product::where('name', 'ULTRA Panel')->firstOrFail()->id,
                 'project_id' => Project::where('name', 'Abby 193')->firstOrFail()->id,
-                'amount' => 4660
+                'amount' => 4660,
             ]
         ]);
     }
