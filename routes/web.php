@@ -39,13 +39,13 @@ Route::resource('product', ProductController::class)->middleware(['auth'])
     ->except(['index', 'show']);
 
 Route::resource('product', ProductController::class)
-    ->only(['index', 'show']);
+    ->only(['index']);
 
 Route::resource('project', ProjectController::class)->middleware(['auth'])
     ->except(['index', 'show']);
 
 Route::resource('project', ProjectController::class)
-    ->only(['index', 'show']);
+    ->only(['index']);
 
 Route::get('/contact', [ContactController::class, 'create'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');

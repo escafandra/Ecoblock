@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Product;
 use App\Models\Project;
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,7 @@ class ProjectSeeder extends Seeder
         $project = Project::factory()->create([
             'name' => 'Abby 193',
             'description' => 'Proyecto Abby 193',
+            'initial_date' => Carbon::create(2023, 7, 27),
         ]);
 
         $project->addMedia('public/images/projects/abby-193/abby-193-1.jpg')->preservingOriginal()->toMediaCollection('images');

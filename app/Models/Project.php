@@ -33,7 +33,7 @@ class Project extends Model implements HasMedia
 
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class)->withPivot('amount');
     }
 
     public function registerMediaCollections(): void
@@ -49,7 +49,11 @@ class Project extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('preview')
-            ->fit(Manipulations::FIT_CROP, 300, 300)
+            ->fit(Manipulations::FIT_CROP, 400, 400)
+            ->nonQueued();
+
+        $this->addMediaConversion('show')
+            ->fit(Manipulations::FIT_CROP, 1000, 600)
             ->nonQueued();
     }
 }

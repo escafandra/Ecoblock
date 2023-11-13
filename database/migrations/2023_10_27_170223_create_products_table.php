@@ -12,6 +12,7 @@ return new class () extends Migration {
             $table->boolean('enabled')->default(true);
             $table->string('name');
             $table->text('description')->nullable(true);
+            $table->string('measure')->nullable();
             $table->integer('price')->nullable(true);
             $table->json('advantages')->nullable(true);
             $table->json('datasheet')->nullable(true);

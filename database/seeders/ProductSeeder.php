@@ -53,11 +53,12 @@ class ProductSeeder extends Seeder
         $product->addMedia('public/images/products/ultra-dry.jpg')->preservingOriginal()->toMediaCollection('images');
 
         $product = Product::factory()->create([
-            'name' => 'ULTRAPANEL',
+            'name' => 'ULTRA Panel',
             'description' => 'Paneles prefabricados a base de Concreto Liviano, fibras sintéticas y reforzado con malla electro soldada, que posee una estructura alveolar de millones de micro celdas de aire y un sistema machihembrado de unión entre paneles. El acabado de la superficie permite que no sea necesario pañetar',
+            'measure' => 'Metros Cuadrados',
             'price' => null,
             'advantages' => json_encode(['Menos densidad y peso', '4-7 Veces más aislamiento térmico', '2 Veces más aislamiento acustico', '90% Ahorro de agua', '30% Ahorro energético']),
-            'datasheet' => json_encode(['Tipo' => 'Panel prefabricado', 'Color' => 'Gris', 'Ancho' => '50cm', 'Espesor' => '10cm', 'Altura' => 'Variable', 'Densidad' => '0.900 Ton/m3', 'Peso' => '90 Kg/m2'])
+            'datasheet' => json_encode(['Tipo' => 'Panel prefabricado', 'Color' => 'Gris', 'Ancho' => '50cm', 'Espesor' => '10cm', 'Altura' => 'Variable', 'Densidad' => '0.900 Ton/m3', 'Peso' => '90 Kg/m2']),
         ]);
 
         $product->addMedia('public/images/products/panel.png')->preservingOriginal()->toMediaCollection('images');
