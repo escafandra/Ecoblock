@@ -36,8 +36,28 @@
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">{{ $project->name }}</h2>
                                     <p class="item-intro text-muted">{{ $project->description }}</p>
-                                    <img class="img-fluid d-block mx-auto" src="{{ $project->getFirstMediaUrl('images', 'show') }}" alt="{{ $project->name }}" />
-                                    <p></p>
+                                    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="{{ $project->getFirstMediaUrl('images', 'show') }}" class="d-block w-100 h-25"
+                                                     alt="{{ $project->name }}">
+                                            </div>
+                                            @for($i = 2; $i <= count($project->getMedia('images')); $i++)
+                                                <div class="carousel-item">
+                                                    <img src="{{ $project->getMedia('images')[$i - 1]->getUrl('show') }}" class="d-block w-100 h-25"
+                                                         alt="{{ $project->name . $i }}">
+                                                </div>
+                                            @endfor
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Cliente Satisfecho:</strong>
