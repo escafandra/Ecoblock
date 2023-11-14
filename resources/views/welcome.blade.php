@@ -11,12 +11,12 @@
                         @endfor
                     </div>
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
+                        <div class="carousel-item ratio ratio-21x9 active">
                             <img src="{{ asset("images/welcome/welcome-1.jpeg") }}" class="d-block w-100"
                                  alt="{{"welcome-1"}}">
                         </div>
                         @for($i = 2; $i <= 11; $i++)
-                            <div class="carousel-item">
+                            <div class="carousel-item ratio ratio-21x9">
                                 <img src="{{ asset("images/welcome/welcome-$i.jpeg") }}" class="d-block w-100"
                                      alt="{{"welcome-$i"}}">
                             </div>
