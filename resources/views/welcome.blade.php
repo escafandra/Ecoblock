@@ -39,8 +39,7 @@
                             <iframe class="rounded" src="https://www.youtube.com/embed/6jcG1xGi1rw?si=ZVQl_zhzzpx7NFRh" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                         <div class="card-body">
-                            <div class="card-title">Instalación</div>
-                            <div class="text-muted card-text">Así se hace</div>
+                            <div class="card-title">Instalación UltraPanel</div>
                         </div>
                     </div>
                 </div>
@@ -50,8 +49,7 @@
                             <iframe class="rounded" src="https://www.youtube.com/embed/gcs4QFNl1oo?si=z7Fl1Km3svgZ3V06" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                         <div class="card-body">
-                            <div class="card-title">Instalación</div>
-                            <div class="text-muted card-text">Así se hace</div>
+                            <div class="card-title">Elementos utilizados en la instalación de UltraPanel</div>
                         </div>
                     </div>
                 </div>
@@ -61,8 +59,7 @@
                             <iframe class="rounded" src="https://www.youtube.com/embed/AavvAgTCo5Q?si=qZr57F4RzJ1d3nih" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                         <div class="card-body">
-                            <div class="card-title">Instalación</div>
-                            <div class="text-muted card-text">Así se hace</div>
+                            <div class="card-title">Trasiego</div>
                         </div>
                     </div>
                 </div>
@@ -72,8 +69,7 @@
                             <iframe class="rounded" src="https://www.youtube.com/embed/7Ut_OveFF1w?si=4KI3FVoPl052rQxb" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                         <div class="card-body">
-                            <div class="card-title">Instalación</div>
-                            <div class="text-muted card-text">Así se hace</div>
+                            <div class="card-title">UltraPanel adaptado a la medida</div>
                         </div>
                     </div>
                 </div>
@@ -83,8 +79,7 @@
                             <iframe class="rounded" src="https://www.youtube.com/embed/wFDnVa0YaEk?si=Gqd1stH2dfi8ST65" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                         <div class="card-body">
-                            <div class="card-title">Instalación</div>
-                            <div class="text-muted card-text">Así se hace</div>
+                            <div class="card-title">Material más resistente</div>
                         </div>
                     </div>
                 </div>
@@ -94,8 +89,7 @@
                             <iframe class="rounded" src="https://www.youtube.com/embed/EkT9u1LLrBw?si=4VgM3qaxUWB5gBGc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                         <div class="card-body">
-                            <div class="card-title">Instalación</div>
-                            <div class="text-muted card-text">Así se hace</div>
+                            <div class="card-title">Menos peso que otros materiales</div>
                         </div>
                     </div>
                 </div>
@@ -105,8 +99,7 @@
                             <iframe class="rounded" src="https://www.youtube.com/embed/9B8LZfvYes8?si=fxmupjbiByLPbQ9N" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                         <div class="card-body">
-                            <div class="card-title">Instalación</div>
-                            <div class="text-muted card-text">Así se hace</div>
+                            <div class="card-title">UltraPanel más liviano</div>
                         </div>
                     </div>
                 </div>
@@ -116,8 +109,7 @@
                             <iframe class="rounded" src="https://www.youtube.com/embed/J0iHOiNXHEU?si=GqSj5S64t97Knx1h" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                         <div class="card-body">
-                            <div class="card-title">Instalación</div>
-                            <div class="text-muted card-text">Así se hace</div>
+                            <div class="card-title">Corta Fuego</div>
                         </div>
                     </div>
                 </div>
@@ -127,8 +119,7 @@
                             <iframe class="rounded" src="https://www.youtube.com/embed/5n2Ed7BTrcs?si=oz07of2Z5ZGwHF4c" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                         <div class="card-body">
-                            <div class="card-title">Instalación</div>
-                            <div class="text-muted card-text">Así se hace</div>
+                            <div class="card-title">Fácil trasiego vertical</div>
                         </div>
                     </div>
                 </div>
@@ -138,8 +129,7 @@
                             <iframe class="rounded" src="https://www.youtube.com/embed/bLbHrHvwDZ0?si=OgXo2Otp-4joR5pE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                         <div class="card-body">
-                            <div class="card-title">Instalación</div>
-                            <div class="text-muted card-text">Así se hace</div>
+                            <div class="card-title">Resistente a altas temperaturas</div>
                         </div>
                     </div>
                 </div>
