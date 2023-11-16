@@ -11,7 +11,7 @@
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="{{ '#project' . $project->id }}">
-                                <img class="img-fluid" src="{{ $project->getFirstMediaUrl('images', 'preview') }}" alt="{{ $project->name }}" />
+                                <img class="img-fluid rounded" src="{{ $project->getFirstMediaUrl('images', 'preview') }}" alt="{{ $project->name }}" />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">{{ $project->name }}</div>
@@ -48,7 +48,7 @@
                                                     </div>
                                                 @endfor
                                             </div>
-                                            <button class="carousel-control-prev" type="button" data-bs-target=""{{ '#projectCarousel' . $project->id }}"" data-bs-slide="prev">
+                                            <button class="carousel-control-prev" type="button" data-bs-target="{{ '#projectCarousel' . $project->id }}" data-bs-slide="prev">
                                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                 <span class="visually-hidden">Previous</span>
                                             </button>
