@@ -26,7 +26,7 @@ class ProjectSeeder extends Seeder
         $project->addMedia('public/images/projects/abby-193/abby-193-6.jpg')->preservingOriginal()->toMediaCollection('images');
         $project->addMedia('public/images/projects/abby-193/abby-193-7.jpg')->preservingOriginal()->toMediaCollection('images');
         $project->addMedia('public/images/projects/abby-193/abby-193-8.jpg')->preservingOriginal()->toMediaCollection('images');
-        $project->addMedia('public/images/projects/abby-193/abby-193-render.jpg')->preservingOriginal()->toMediaCollection('images');
+        $project->addMedia('public/images/projects/abby-193/abby-193-9.jpg')->preservingOriginal()->toMediaCollection('images');
 
         $project = Project::factory()->create([
             'name' => 'Allegro 2',
@@ -35,15 +35,15 @@ class ProjectSeeder extends Seeder
 
         $project->addMedia('public/images/projects/allegro-2/allegro-2-1.jpg')->preservingOriginal()->toMediaCollection('images');
         $project->addMedia('public/images/projects/allegro-2/allegro-2-2.jpg')->preservingOriginal()->toMediaCollection('images');
-        $project->addMedia('public/images/projects/allegro-2/allegro-2-render.png')->preservingOriginal()->toMediaCollection('images');
+        $project->addMedia('public/images/projects/allegro-2/allegro-2-3.png')->preservingOriginal()->toMediaCollection('images');
 
         $project = Project::factory()->create([
             'name' => 'Balcones San Luis',
             'description' => 'Proyecto Balcones San Luis',
         ]);
 
-        $project->addMedia("public/images/projects/balcones-san-luis/proyecto-balcones-de-san-luis.png")->preservingOriginal()->toMediaCollection('images');
-        $project->addMedia("public/images/projects/balcones-san-luis/balcones-san-luis-1.jpg")->preservingOriginal()->toMediaCollection('images');
+        $project->addMedia("public/images/projects/balcones-san-luis/balcones-san-luis-1.png")->preservingOriginal()->toMediaCollection('images');
+        $project->addMedia("public/images/projects/balcones-san-luis/balcones-san-luis-12.jpg")->preservingOriginal()->toMediaCollection('images');
         $project->addMedia("public/images/projects/balcones-san-luis/balcones-san-luis-2.jpg")->preservingOriginal()->toMediaCollection('images');
         $project->addMedia("public/images/projects/balcones-san-luis/balcones-san-luis-3.jpg")->preservingOriginal()->toMediaCollection('images');
         $project->addMedia("public/images/projects/balcones-san-luis/balcones-san-luis-4.jpg")->preservingOriginal()->toMediaCollection('images');
@@ -70,15 +70,14 @@ class ProjectSeeder extends Seeder
         $project->addMedia("public/images/projects/urban-chico/urban-chico-7.jpg")->preservingOriginal()->toMediaCollection('images');
         $project->addMedia("public/images/projects/urban-chico/urban-chico-8.jpg")->preservingOriginal()->toMediaCollection('images');
         $project->addMedia("public/images/projects/urban-chico/urban-chico-9.jpg")->preservingOriginal()->toMediaCollection('images');
-        $project->addMedia("public/images/projects/urban-chico/urban-chico-10.jpg")->preservingOriginal()->toMediaCollection('images');
 
         $project = Project::factory()->create([
             'name' => 'Taj 97',
             'description' => 'Proyecto Taj 97',
         ]);
 
-        $project->addMedia("public/images/projects/taj-97/taj97.png")->preservingOriginal()->toMediaCollection('images');
-        $project->addMedia("public/images/projects/taj-97/proyecto-taj97-1.jpg")->preservingOriginal()->toMediaCollection('images');
+        $project->addMedia("public/images/projects/taj-97/proyecto-taj97-1.png")->preservingOriginal()->toMediaCollection('images');
+        $project->addMedia("public/images/projects/taj-97/proyecto-taj97-20.jpg")->preservingOriginal()->toMediaCollection('images');
         $project->addMedia("public/images/projects/taj-97/proyecto-taj97-2.jpg")->preservingOriginal()->toMediaCollection('images');
         $project->addMedia("public/images/projects/taj-97/proyecto-taj97-3.jpg")->preservingOriginal()->toMediaCollection('images');
         $project->addMedia("public/images/projects/taj-97/proyecto-taj97-4.jpg")->preservingOriginal()->toMediaCollection('images');
@@ -96,7 +95,5 @@ class ProjectSeeder extends Seeder
         $project->addMedia("public/images/projects/taj-97/proyecto-taj97-17.jpg")->preservingOriginal()->toMediaCollection('images');
         $project->addMedia("public/images/projects/taj-97/proyecto-taj97-18.jpg")->preservingOriginal()->toMediaCollection('images');
         $project->addMedia("public/images/projects/taj-97/proyecto-taj97-19.jpg")->preservingOriginal()->toMediaCollection('images');
-        $project->addMedia("public/images/projects/taj-97/prueba-carga-mueble-cocina.jpg")->preservingOriginal()->toMediaCollection('images');
-
     }
 }
