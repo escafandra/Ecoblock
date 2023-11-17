@@ -1,9 +1,12 @@
 @extends('layouts.app')
 @section('content')
     <section class="page-section">
-        <div class="container-fluid mt-4">
-            <div class="row" >
-                <div id="welcomeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="container mt-4">
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <img class="d-block w-100" src="{{ asset('images/logos/white-eco.png') }}" alt="logo-2">
+                </div>
+                <div id="welcomeCarousel" class="carousel slide col-md-8" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#welcomeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         @for($i = 2; $i <= 11; $i++)
@@ -11,14 +14,12 @@
                         @endfor
                     </div>
                     <div class="carousel-inner">
-                        <div class="carousel-item ratio ratio-21x9 active">
-                            <img src="{{ asset("images/welcome/welcome-1.jpeg") }}" class="d-block w-100"
-                                 alt="{{"welcome-1"}}">
+                        <div class="carousel-item active">
+                            <img src="{{ asset("images/welcome/welcome-1.jpeg") }}" class="d-block h-100 rounded" alt="{{"welcome-1"}}">
                         </div>
                         @for($i = 2; $i <= 11; $i++)
-                            <div class="carousel-item ratio ratio-21x9">
-                                <img src="{{ asset("images/welcome/welcome-$i.jpeg") }}" class="d-block w-100"
-                                     alt="{{"welcome-$i"}}">
+                            <div class="carousel-item">
+                                <img src="{{ asset("images/welcome/welcome-$i.jpeg") }}" class="d-block h-100 rounded" alt="{{"welcome-$i"}}">
                             </div>
                         @endfor
                     </div>

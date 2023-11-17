@@ -486,6 +486,11 @@ progress {
 [hidden] {
     display: none !important;
 }
+.carousel-inner {
+    height: 60rem;
+    display: flex;
+    justify-items: center;
+}
 
 .lead {
     font-size: 1.25rem;
