@@ -134,6 +134,35 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="ratio ratio-16x9">
+                            <iframe class="rounded" src="https://www.youtube.com/embed/Wm25JKnGC7A?si=owAGcMKXY2xONq86" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Fácil trasiego vertical</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="ratio ratio-16x9">
+                            <iframe class="rounded" src="https://www.youtube.com/embed/I1azkXMJn4I?si=0xfJ7b4wfHbND8Aq" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Plataformas de recibo</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="ratio ratio-16x9">
+                            <iframe class="rounded" src="https://www.youtube.com/embed/cOGk_B0ztYw?si=65XFroJpMDiRqjES" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Ultra Pego</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
