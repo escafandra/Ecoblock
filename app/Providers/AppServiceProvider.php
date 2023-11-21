@@ -3,22 +3,20 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Whitecube\LaravelCookieConsent\Cookie;
+use Whitecube\LaravelCookieConsent\Facades\Cookies;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
     public function register(): void
     {
-        //
+        $this->app->bind('path.public', function () {
+            return realpath(base_path().'/../public_html');
+        });
     }
 
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
-        //
+        Cookies::analytics()->google(env('GOOGLE_ANALYTICS_ID', ''));
     }
 }
