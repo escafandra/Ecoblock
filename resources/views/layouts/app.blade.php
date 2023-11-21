@@ -24,11 +24,7 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/scripts.js', 'resources/js/app.js'])
-    {!! htmlScriptTagJsApi([
-            'action' => 'homepage',
-            'callback_then' => 'callbackThen',
-            'callback_catch' => 'callbackCatch'
-        ]) !!}
+    {!! htmlScriptTagJsApi() !!}
 </head>
 <body id="page-top">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
