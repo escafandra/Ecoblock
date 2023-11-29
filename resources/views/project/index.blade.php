@@ -13,7 +13,7 @@
                             <a class="portfolio-link" data-bs-toggle="modal" href="{{ '#project' . $project->id }}">
                                 <img class="img-fluid rounded" src="{{ $project->getFirstMediaUrl('images', 'preview') }}" alt="{{ $project->name }}" />
                             </a>
-                            <div class="portfolio-caption">
+                            <div class="portfolio-caption mt-1">
                                 <div class="portfolio-caption-heading">{{ $project->name }}</div>
                                 <div class="portfolio-caption-subheading text-muted">{{ $project->description }}</div>
                             </div>
