@@ -69,10 +69,16 @@
                                             <strong>Fecha de inicio:</strong>
                                             {{ $project->initial_date }}
                                         </li>
-                                        <li>
-                                            <strong>Fecha de finalización:</strong>
-                                            {{ $project->final_date }}
-                                        </li>
+                                        @if($project->final_date)
+                                            <li>
+                                                <strong>Fecha de finalización:</strong>
+                                                {{ $project->final_date }}
+                                            </li>
+                                        @else
+                                            <li>
+                                                <strong>Actualmente en construcción</strong>
+                                            </li>
+                                        @endif
                                         @foreach($project->products as $product)
                                             @if($product)
                                                 <li>
