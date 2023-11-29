@@ -17,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        Cookies::analytics()->google(env('GOOGLE_ANALYTICS_ID', ''));
+        Cookies::essentials()->session()->csrf();
+        Cookies::analytics()->google(config('cookieconsent.google_id'));
     }
 }

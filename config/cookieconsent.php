@@ -55,4 +55,5 @@ return [
 
     'policy' => null,
 
+    'google_id' => env('GOOGLE_ANALYTICS_ID', ''),
 ];
